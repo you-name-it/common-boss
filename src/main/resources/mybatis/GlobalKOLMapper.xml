@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.common.service.KOLCenter.mapper.GlobalKOLMapper">
+
+    <resultMap id="baseMap" type="com.common.service.KOLCenter.entity.GlobalKOL">
+        <id column="ID" property="ID"/>
+        <result column="KOLID" property="KOLID"/>
+        <result column="HeadUrl" property="HeadUrl"/>
+        <result column="NickName" property="NickName"/>
+        <result column="BroadcastRoom" property="BroadcastRoom"/>
+        <result column="Signature" property="Signature"/>
+        <result column="OnLine" property="OnLine"/>
+        <result column="OffLine" property="OffLine"/>
+        <result column="Classify" property="Classify"/>
+        <result column="Area" property="Area"/>
+        <result column="Platform" property="Platform"/>
+        <result column="Fans" property="Fans"/>
+        <result column="HighestViewNumber" property="HighestViewNumber"/>
+        <result column="AverageViewNumber" property="AverageViewNumber"/>
+        <result column="Commentary" property="Commentary"/>
+        <result column="State" property="State"/>
+        <result column="CreateTime" property="CreateTime"/>
+        <result column="UpdateTime" property="UpdateTime"/>
+        <result column="Status" property="Status"/>
+    </resultMap>
+
+    <select id="selectKolPage" resultMap="baseMap">
+
+        select * from globalkol g
+        <where>
+            <if test="state != null and state != ''">
+                g.State like #{state}
+            </if>
+        </where>
+
+    </select>
+
+
+
+</mapper>

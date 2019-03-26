@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>阿拉山-跨境贸易投资服务管理平台</title>
+    <meta name="keywords" content="跨境电商,跨境电商平台,跨境电商服务平台,跨境电商新闻,跨境电商论坛,阿拉山网">
+    <meta name="description" content="阿拉山网，致力于为跨境电商从业者提供跨境进出口、外贸、国内外财经政策等新闻资讯的跨境贸易投资服务管理平台，并拥有CCEE跨境智能选品平台，链接起跨境电商平台、服务商、工厂及众多卖家，致力打造跨境电商全新生态链条！">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <link rel="icon" th:href="@{/ui/images/favicon.ico}">
+    <link  th:href="@{/ui/css/user.css}" rel="stylesheet">
+    <link th:href="@{/layui/css/layui.css}" rel="stylesheet">
+    <script th:src="@{/ui/js/jquery_3_3_1_min.js}"></script>
+    <script th:src="@{/layui/layui.js}" charset="utf-8"></script>
+</head>
+<body>
+
+<!-- 顶部通用 -->
+<div th:include="common/top :: common" style="height: 84px;"></div>
+
+<!-- 主要内容 -->
+
+<div class="layui-container" style="margin: 20px auto;">
+
+<div class="layui-row layui-col-space20">
+    <div class="layui-col-sm5 layui-col-md2">
+        <div class="layui-card">
+            <div class="layui-card-header"></div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <i class="layui-icon layui-icon-rmb" style="font-size: 20px; color: red;"></i>
+                <span>待付款</span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm5 layui-col-md2">
+        <div class="layui-card">
+            <div class="layui-card-header"></div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <i class="layui-icon layui-icon-reply-fill" style="font-size: 20px; color: red;"></i>
+                <span>待评价</span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm5 layui-col-md2">
+        <div class="layui-card">
+            <div class="layui-card-header"></div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <i class="layui-icon layui-icon-star-fill" style="font-size: 20px; color: red;"></i>
+                <span>我的收藏</span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm5 layui-col-md2">
+        <div class="layui-card">
+            <div class="layui-card-header"></div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <i class="layui-icon layui-icon-template-1" style="font-size: 20px; color: red;"></i>
+                <span>我的卡券</span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm5 layui-col-md2">
+        <div class="layui-card">
+            <div class="layui-card-header"></div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <i class="layui-icon layui-icon-list" style="font-size: 20px; color: red;"></i>
+                <span>我的课时</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-lg10 layui-col-md10 layui-col-sm10 layui-col-xs8">
+            <div class="content">
+                <div class="user-info-box">
+
+                    <a>
+                        <div>
+                            <i class="layui-icon layui-icon-rmb" style="font-size: 20px; color: red;"></i>
+                            <span>待付款</span>
+                        </div>
+                    </a>
+                    <a>
+                        <div>
+                            <i class="layui-icon layui-icon-reply-fill" style="font-size: 20px; color: red;"></i>
+                            <span>待评价</span>
+                        </div>
+                    </a>
+                    <a>
+                        <div>
+                            <i class="layui-icon layui-icon-star-fill" style="font-size: 20px; color: red;"></i>
+                            <span>我的收藏</span>
+                        </div>
+                    </a>
+                    <a>
+                        <div>
+                            <i class="layui-icon layui-icon-template-1" style="font-size: 20px; color: red;"></i>
+                            <span>我的卡券</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="user-info-box">
+                    <a>
+                        <div>
+                            <i class="layui-icon layui-icon-list" style="font-size: 20px; color: red;"></i>
+                            <span>我的课时</span>
+                        </div>
+                    </a>
+                    <a>
+                        <div>
+                            <i class="layui-icon layui-icon-ok" style="font-size: 20px; color: red;"></i>
+                            <span>我的预约</span>
+                        </div>
+                    </a>
+                    <a>
+                        <div>
+                            <i class="layui-icon layui-icon-form" style="font-size: 20px; color: red;"></i>
+                            <span>我的订单</span>
+                        </div>
+                    </a>
+                    <a>
+                        <div>
+                            <i class="layui-icon layui-icon-read" style="font-size: 20px; color: red;"></i>
+                            <span>我的学习</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-lg2 layui-col-md2 layui-col-sm2 layui-col-xs2">
+            <div class="right-select">
+                <div class="user-intro">
+                    <div class="user-pic"><img th:src="@{/ui/images/favicon.ico}"     width="90"/></div>
+                    <div class="user-name">测试用户</div>
+                    <div class="user-lv">普通会员</div>
+                    <div class="user-addVip"><a class="layui-btn layui-btn-radius layui-btn-normal">加入阿拉山会员</a></div>
+                    <div class="user-addVip"><button class="layui-btn layui-btn-radius  layui-btn-danger" onclick="loadPage('/user/enterpriseAuthentication')">申请企业认证</button></div>
+                </div>
+
+
+                <div class="layui-collapse" >
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">我的账户</h2>
+                        <div class="layui-colla-content layui-show" >
+                            <div><a onclick="loadPage('/user/info')">个人资料</a></div>
+                            <div><a onclick="loadPage('/user/accountManagement')">账号管理</a></div>
+                            <div><a onclick="loadPage('/user/changePassword')">修改密码</a></div>
+                        </div>
+                    </div>
+
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">交易管理</h2>
+                        <div class="layui-colla-content layui-show">
+                            <div><a>个人资料</a></div>
+                            <div><a>账号管理</a></div>
+                            <div><a>修改密码</a></div>
+                        </div>
+                    </div>
+
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">我的学习</h2>
+                        <div class="layui-colla-content layui-show">
+                            <div><a>个人资料</a></div>
+                            <div><a>账号管理</a></div>
+                            <div><a>修改密码</a></div>
+                        </div>
+                    </div>
+
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">我的阿拉山</h2>
+                        <div class="layui-colla-content layui-show">
+                            <div><a>个人资料</a></div>
+                            <div><a>账号管理</a></div>
+                            <div><a>修改密码</a></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 底部通用-->
+<div th:include="common/footer :: common"></div>
+
+</body>
+<script type="text/javascript">
+
+    layui.use(['element', 'layer'], function() {
+        var element = layui.element;
+
+    });
+
+    function loadPage(url) {
+        $(".content").load(url,function(response,status,xhr){
+
+            //alert(response);
+            /*alert(status);
+            alert(xhr);*/
+
+            if(xhr.getResponseHeader('sessionstatus') == 'timeout'){
+                window.location = "/login";
+            }
+        })
+    }
+
+
+
+</script>
+
+</html>

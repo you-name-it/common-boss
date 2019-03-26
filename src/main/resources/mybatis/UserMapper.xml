@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.common.base.user.mapper.UserMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.common.base.user.entity.User">
+		<id column="ID" property="ID" />
+		<result column="USER_NAME" property="userName" />
+		<result column="EMAIL" property="email" />
+		<result column="PHONE" property="phone" />
+		<result column="PASSWORD" property="password" />
+		<result column="CREDENTIALS_SALT" property="credentialsSalt" />
+		<result column="LOCKED" property="locked" />
+		<result column="VIP_STATUS" property="vipStatus" />
+		<result column="VIP_ID" property="vipID" />
+		<result column="GENDER" property="gender" />
+		<result column="BIRTHDAY" property="birthDay" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="UPDATE_TIME" property="updateTime" />
+		<result column="LOGIN_TIME" property="loginTime" />
+		<result column="PROVINCE" property="province" />
+		<result column="CITY" property="city" />
+		<result column="COUNTIES" property="counties" />
+		<result column="SITE" property="site" />
+		<result column="COMPANYID" property="companyID" />
+		<result column="COMPANY_STATUS" property="companyStatus" />
+		<result column="AIRWALLEX_ACCOUNT_ID" property="airwallexAccountId" />
+		<association property="role" column="id" javaType="com.common.base.role.entity.TbRole">
+			<id property="id" column="r_id"/>
+			<result property="name" column="r_name"/>
+			<result property="key" column="r_key"/>
+			<result property="status" column="r_status"/>
+			<result property="description" column="r_description"/>
+			<result property="createTime" column="r_create_time"/>
+			<result property="updateTime" column="r_update_time"/>
+		</association>
+
+	</resultMap>
+
+
+	<select id="selectUserRole" resultMap="BaseResultMap" parameterType="map">
+		SELECT u.ID,
+		u.USER_NAME,
+		u.EMAIL,
+		u.PHONE,
+		u.PASSWORD,
+		u.CREDENTIALS_SALT,
+		u.LOCKED,
+		u.VIP_STATUS,
+		u.VIP_ID,
+		u.GENDER,
+		u.BIRTHDAY,
+		u.CREATE_TIME,
+		u.UPDATE_TIME,
+		u.LOGIN_TIME,
+		u.PROVINCE,
+		u.CITY,
+		u.COUNTIES,
+		u.SITE,
+		u.COMPANYID,
+		u.COMPANY_STATUS,
+		u.AIRWALLEX_ACCOUNT_ID,
+		r.r_id,
+		r.r_name,
+		r.r_key,
+		r.r_status,
+		r.r_description,
+		r.r_create_time,
+		r.r_update_time
+		FROM User u LEFT JOIN tb_role_user ru ON u.ID = ru.u_id LEFT JOIN tb_role r ON ru.r_id = r.r_id
+		<where>
+			<!--<if test="userId != null and userId != ''">
+				u.ID=#{userId}
+			</if>-->
+			<if test="phone != null and phone != ''">
+				u.PHONE=#{phone}
+			</if>
+		</where>
+	</select>
+
+</mapper>

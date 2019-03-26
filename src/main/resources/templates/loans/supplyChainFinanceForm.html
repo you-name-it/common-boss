@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填写资料</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{/layui/css/layui.css}" media="all" rel="stylesheet">
+    <link th:href="@{/ui/css/newIndex.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/ui/css/select.css}">
+    <link rel="icon" th:href="@{/ui/images/favicon.ico}">
+
+</head>
+<body >
+<!--导航栏-->
+
+<div th:include="common/newtop :: common" ></div>
+<!--内容分栏-->
+<div style="padding-top: 60px;">
+    <div class="layui-container layui-bg-white" style="color: black;">
+        <div style="margin: 40px;">
+            <hr>
+            <div class="layui-row">
+                <div class="layui-col-md8">
+                    <div style="margin: 30px;">
+                        <strong style="font-size: 30px;">供应链金融贷款从alasin开始!</strong><br><br>
+                        <span>假如今天得到批准，钱将在两天内到您的账户上。</span>
+                    </div>
+                </div>
+                <div class="layui-col-md4" style="padding: 20px;">
+                    <div>
+                        <strong>有问题吗？</strong>
+                    </div>
+                    <div>
+                            <span>
+                                我们随时为您解答疑问或通过电话提出申请。
+                            </span>
+                    </div>
+                    <div style="margin: 10px 0;">
+                            <span style="font-size: 25px;">
+                                020-85509186
+                            </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr>
+            <div style="margin: 30px;">
+                <div class="layui-row form-style">
+                    <div class="layui-col-md6">
+                        <form class="layui-form" action="" method="post" lay-filter="example" style="padding-bottom: 40px;">
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>您需要多少资金？</strong>
+                                </div>
+                                <input type="text" name="userName" lay-verify="required" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>您什么时候需要这笔钱？</strong>
+                                </div>
+                                <div class="layui-inline">
+
+                                    <select name="interest" lay-verify="required" lay-filter="aihao">
+                                        <option value="0">--请选择--</option>
+                                        <option value="1">72小时内</option>
+                                        <option value="2">3天-2周内</option>
+                                        <option value="3">3-4周内</option>
+                                        <option value="4">一个月以上</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>您将如何使用这笔资金？</strong>
+                                </div>
+                                <textarea type="text" name="userName" lay-verify="required"  autocomplete="off"  class="layui-textarea"></textarea>
+                            </div>
+                            <hr>
+
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>您的企业名称？</strong>
+                                </div>
+                                <input type="text" name="userName" lay-verify="required" autocomplete="off"  class="layui-input">
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>营业执照（统一社会信用代码）</strong>
+                                </div>
+                                <input type="text" name="userName" lay-verify="required" autocomplete="off"  class="layui-input">
+                            </div>
+
+                            <div id="addressDiv">
+                                <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <div class="title">
+                                        <strong>省</strong>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <select name="province"  lay-filter="province" id="province">
+                                            <option ></option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="layui-inline">
+                                    <div class="title">
+                                        <strong>市</strong>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <select name="city"  lay-filter="city" id="city">
+                                            <option ></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>地址</strong>
+                                </div>
+                                <input type="text" name="userName" lay-verify="required" autocomplete="off" placeholder="尽可能详细的地址" class="layui-input">
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <div class="title">
+                                        <strong>您的企业是什么时候开始创建的？</strong>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="date" lay-verify="required" id="date" placeholder="yyyy-MM-dd" autocomplete="off"  class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>法律实体类型？</strong>
+                                </div>
+                                <select name="interest" lay-verify="required" lay-filter="aihao">
+                                    <option value="0">--请选择--</option>
+                                    <option value="1">独资经营者</option>
+                                    <option value="2">有限责任公司</option>
+                                    <option value="3">普通合伙</option>
+                                    <option value="4">有限合伙</option>
+                                    <option value="4">有限责任合伙企业</option>
+                                    <option value="4">公司</option>
+                                    <option value="4">非盈利性组织</option>
+                                </select>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>您目前是否有其他短期融资？</strong>
+                                </div>
+                                <input type="radio" name="sex" value="有" title="有" checked="">
+                                <input type="radio" name="sex" value="没有" title="没有">
+                            </div>
+
+                            <br>
+                            <hr>
+                            <br>
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>您的名字</strong>
+                                </div>
+                                <input type="text" name="userName" lay-verify="required" autocomplete="off"  class="layui-input">
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>您的电子邮箱地址</strong>
+                                </div>
+                                <input type="text" name="userName" lay-verify="email" autocomplete="off"  class="layui-input">
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="title">
+                                    <strong>您的手机号码</strong>
+                                </div>
+                                <input type="text" name="userName" lay-verify="phone" autocomplete="off"  class="layui-input">
+                            </div>
+
+
+                            <div> <a class="layui-btn layui-bg-blue"  lay-submit="" lay-filter="submit">提交</a></div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:include="common/newfooter :: common" ></div>
+
+</body>
+
+<script th:src="@{/ui/js/jquery_3_3_1_min.js}"></script>
+<script th:src="@{/layui/layui.js}"></script>
+<script th:src="@{/ui/js/select.js}"></script>
+<script th:src="@{/ui/js/app.js}"></script>
+
+<script>
+        layui.use(['form','upload', 'layedit', 'laydate','element'], function() {
+            var form = layui.form
+                , layer = layui.layer
+                , element = layui.element
+                , laydate = layui.laydate
+                ,upload = layui.upload;
+
+
+        laydate.render({
+            elem: '#date'
+        });
+
+        form.on('submit(submit)', function(data){
+            /*layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            });*/
+            window.location.href = "/submitSuccess";
+            //commit(data.field,"/register","/login");
+            return true;
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<top th:fragment="common">
+
+<link th:href="@{/ui/css/header.css}" rel="stylesheet">
+
+<link rel="stylesheet" th:href="@{/ui/css/font_491364_9rn6hw3brzt.css}">
+
+<div class="header">
+    <div class="header_nav">
+        <div class="logo">
+            <a href="//#alasin#/" title="阿拉山网-跨境贸易投资服务管理平台">
+                <div class="icon ic-logo"></div> <h1>跨境贸易投资服务管理平台</h1> </a>
+        </div>
+        <div class="nav_box">
+            <div class="nav_item active">
+                <div class="label">
+                    <a  href="/index" class="fetch-click"> 首页 </a>
+                </div>
+            </div>
+
+            <div class="nav_item hov_box" >
+                <div class="label">
+                    <!--<a href="/service/trade"> 跨境贸易 </a>-->
+                    <a href="javascript:void(0);"> 跨境贸易 </a>
+                </div>
+
+                <div class="hover_wrap s">
+
+                    <div class="js_item">
+                        <div class="item ">
+                            <a href="/service/import/info">进口服务</a>
+                        </div>
+                        <div class="item">
+                            <a href="/service/export/info">出口服务</a>
+                        </div>
+                        <div class="item">
+                            <a href="/service/exchangeSettlement/info">外汇结算</a>
+                        </div>
+                        <div class="item">
+                            <a href="/service/logistics/info">物流服务</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="nav_item hov_box">
+                <div class="label">
+                    <!--<a href="/service/capital"> 资金服务 </a>-->
+                    <a href="javascript:void(0);"> 资金服务 </a>
+                </div>
+
+                <div class="hover_wrap s">
+
+                    <div class="js_item">
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">供应链金融</a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">融资贷款</a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">股权投资</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="nav_item hov_box">
+            <div class="label">
+                <!--<a href="/service/humanCapital"> 人才资本 </a>-->
+                <a href="javascript:void(0);"> 人才资本 </a>
+            </div>
+
+            <div class="hover_wrap s">
+
+                <div class="js_item">
+                    <div class="item">
+                        <a target="_blank" href="javascript:void(0);">在线教育</a>
+                    </div>
+                    <div class="item">
+                        <a target="_blank" href="javascript:void(0);">人才市场</a>
+                    </div>
+                    <div class="item">
+                        <a target="_blank" href="javascript:void(0);">实训基地</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+            <div class="nav_item hov_box">
+                <div class="label">
+                    <!--<a href="/service/humanCapital"> 科技金融 </a>-->
+                    <a href="javascript:void(0);"> 科技金融 </a>
+                </div>
+                <div class="hover_wrap s">
+
+                    <div class="js_item">
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">数据分析</a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">数据业务</a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">技术产品</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="nav_item hov_box">
+                <div class="label">
+                    <!--<a  href="/service/intelligent"> 智能智造 </a>-->
+                    <a  href="javascript:void(0);"> 智能智造 </a>
+                </div>
+
+                <div class="hover_wrap s">
+                    <div class="js_item">
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">产品列表</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- new的标识 -->
+                <!--<div class="lab_act"></div>-->
+
+            </div>
+            <div class="nav_item hov_box">
+                <div class="label">
+                    <a > 关于我们 </a>
+                </div>
+                <div class="hover_wrap s">
+                    <div class="js_item">
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">公司介绍</a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">联系我们</a>
+                        </div>
+                        <div class="item">
+                            <a target="_blank" href="javascript:void(0);">友情链接</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right_box">
+            <!-- 未登录 -->
+            <div class="lnr" id="notlogin" th:if="${session.userSession} == null">
+                <a target="_parent" class="login" rel="nofollow" href="/login" ><span class="iconfont icon-ic_login"></span><br>登录</a><!--onclick="SSOApi.ShowSSOBox()"-->
+                <a target="_parent" class="register" rel="nofollow" href="/register" ><i class="iconfont icon-ic_register"></i><br>注册</a><!--onclick="SSOApi.ShowSSOBox(true)"-->
+                <!--_parent   在本页面打开    _blank 打开一个新的页面-->
+
+            </div>
+            <!-- 已登录 -->
+            <div class="lnr yes-login" id="islogin" th:if="${session.userSession} != null">
+                <div class="userbox">
+                    <div class="img_box">
+                        <a href="/user/index" rel="nofollow"><img src="https://img04.sogoucdn.com/app/a/200841/bd123a50662c5fdd1c969f1ead169409" alt="" id="userHeadImg"></a>
+                    </div>
+                    <div class="hover_wrap">
+                        <div class="username">
+                            <span th:text="${session.userSession.userName}">
+                            </span>
+                            <br>
+                        </div>
+                        <div class="user_group">
+                            <div class="item">
+                                <a target="_blank" href="javascript:void(0);" rel="nofollow">我的订单</a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="javascript:void(0);" rel="nofollow">会员中心</a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="javascript:void(0);" rel="nofollow">我的课程</a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="javascript:void(0);" rel="nofollow">我的收藏</a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="javascript:void(0);" rel="nofollow">我的卡券</a>
+                            </div>
+                        </div>
+                        <div class="user_group">
+                            <div class="item">
+                                <a href="/logout" >退出</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member_center">
+                <a href="javascript:void(0);" target="_blank"> <i class="iconfont icon-ic_vip"></i><br> 会员 </a>
+                <div class="lab_act"></div>
+            </div>
+            <div class="mobile icbox">
+                <a target="_blank" href="javascript:void(0);" rel="nofollow"> <i class="iconfont icon-shouji"></i><br>公众号 </a>
+                <div class="hover_wrap">
+                    <div class="img_box">
+                        <img src="images/201808151023358161.png">
+                    </div>
+                    <p>下载阿拉山网APP</p>
+                </div>
+            </div>
+            <!--<div class="hic_search icbox">
+                <div class="open">
+                    <i class="iconfont icon-sousuo"></i>
+                    <br>搜索
+                </div>
+                <i class="iconfontyyy hic_close none"></i>
+            </div>-->
+        </div>
+    </div>
+</div>
+    <div id="searchDiv" class="disb none">
+        <div>
+            <input id="keywords" name="keywords" class="search_txt" type="text" placeholder="输入搜索关键词" onclick="this.placeholder=''">
+            <i class="iconfontyyy" onclick="SiteSearch()"></i>
+        </div>
+        <div>
+            <span>热门搜索词</span>
+            <a target="_blank" href="//test..#alasin#/search?keyword=%E4%BA%9A%E9%A9%AC%E9%80%8A%E5%8D%B0%E5%BA%A6%E7%AB%99" class="fetch-click" data-fetch-type="search" data-fetch-id="亚马逊印度站" data-fetch-title="亚马逊印度站" data-fetch-medium="热门搜索词" data-fetch-action="search">亚马逊印度站</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=%E5%B9%BF%E4%BA%A4%E4%BC%9A" class="fetch-click" data-fetch-type="search" data-fetch-id="广交会" data-fetch-title="广交会" data-fetch-medium="热门搜索词" data-fetch-action="search">广交会</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=shopee" class="fetch-click" data-fetch-type="search" data-fetch-id="shopee" data-fetch-title="shopee" data-fetch-medium="热门搜索词" data-fetch-action="search">shopee</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=Vova" class="fetch-click" data-fetch-type="search" data-fetch-id="Vova" data-fetch-title="Vova" data-fetch-medium="热门搜索词" data-fetch-action="search">Vova</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=%E5%B9%B4%E7%BB%88%E6%97%BA%E5%AD%A3" class="fetch-click" data-fetch-type="search" data-fetch-id="年终旺季" data-fetch-title="年终旺季" data-fetch-medium="热门搜索词" data-fetch-action="search">年终旺季</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=%E4%B8%AD%E7%BE%8E%E8%B4%B8%E6%98%93%E6%88%98" class="fetch-click" data-fetch-type="search" data-fetch-id="中美贸易战" data-fetch-title="中美贸易战" data-fetch-medium="热门搜索词" data-fetch-action="search">中美贸易战</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E5%BC%80%E5%BA%97" class="fetch-click" data-fetch-type="search" data-fetch-id="亚马逊新手开店" data-fetch-title="亚马逊新手开店" data-fetch-medium="热门搜索词" data-fetch-action="search">亚马逊新手开店</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=%E5%BC%80%E5%8F%91%E4%BF%A1" class="fetch-click" data-fetch-type="search" data-fetch-id="开发信" data-fetch-title="开发信" data-fetch-medium="热门搜索词" data-fetch-action="search">开发信</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=wish%E5%BC%80%E5%BA%97" class="fetch-click" data-fetch-type="search" data-fetch-id="wish开店" data-fetch-title="wish开店" data-fetch-medium="热门搜索词" data-fetch-action="search">wish开店</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=eBay%E5%BC%80%E5%BA%97" class="fetch-click" data-fetch-type="search" data-fetch-id="eBay开店" data-fetch-title="eBay开店" data-fetch-medium="热门搜索词" data-fetch-action="search">eBay开店</a>
+            <a target="_blank" href="//test..#alasin#/search?keyword=%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0%E6%8E%92%E5%90%8D" class="fetch-click" data-fetch-type="search" data-fetch-id="跨境电商平台排名" data-fetch-title="跨境电商平台排名" data-fetch-medium="热门搜索词" data-fetch-action="search">跨境电商平台排名</a>
+        </div>
+        <div class="searchleft"></div>
+        <div class="searchright"></div>
+    </div>
+    <script th:src="@{/ui/js/header.js}"></script>
+
+    <script th:src="@{/ui/js/app.js}"></script>
+        <div class="adv_box" data-fetch-medium="首页-顶部">
+    </div>
+
+</top>
+</html>

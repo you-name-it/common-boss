@@ -1,0 +1,286 @@
+*{
+    margin: 0px;
+}
+
+body{
+    background: #f3f4f4;
+}
+.main{
+    position: relative;
+    width: 1200px;
+    margin: 20px auto;
+}
+.right-select{
+    position: relative;
+    min-width: 165px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.05);
+}
+.left-content{
+    float: left;
+    position: relative;
+    width: 1120px;
+}
+.user-intro{
+    border-bottom: 1px solid #eee;
+    padding: 15px 0 5px;
+}
+.user-intro a{
+    width: 80%;
+}
+
+.user-pic{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+}
+.user-name{
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.user-lv{
+    color: #999;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.user-info-box{
+    height: 132px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.05);
+    margin-bottom: 20px;
+}
+.user-info-box a{
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+}
+.user-addVip {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.user-wrap{
+    padding: 10px;
+}
+.user-info{
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.user-wrap .user-title{
+    position: relative;
+    display: block;
+    width: 210px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+.layui-colla-content a{
+    position: relative;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    color: #666;
+    text-align: center;
+}
+
+.user-wrap a{
+    position: relative;
+    display: block;
+    width: 210px;
+    height: 36px;
+    line-height: 36px;
+    color: #666;
+    padding-left: 30px;
+}
+.user-title i{
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    color: #a4a6a7;
+}
+.layui-row{
+    margin-top: 10px;
+}
+a{
+    cursor: pointer;
+}
+.layui-colla-content a:hover{
+    background-color: #fff3f3;
+}
+
+.user-info-content{
+    width: 100%;
+    height: 700px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.05);
+}
+
+.user-info-content-form{
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.user-info-content-headimg img{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+.user-info-content-headimg img:hover{
+    border-radius: 50%;
+    background: #7393af;
+    opacity: 0.36;
+}
+.user-info-content-headimg span{
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 135px;
+}
+
+
+.user-info-content-edit-signature{
+    border: none;
+    outline: none;
+    border-bottom: solid 1px #bcbcbc;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    display: inherit;
+}
+
+.user-info-accountManagement{
+    width: 100%;
+    height: 400px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.05);
+}
+
+.user-info-accountManagement-list{
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    top: 60px;
+}
+.user-info-accountManagement-list div{
+    padding: 15px 0;
+    font-size: 16px;
+}
+.user-info-accountManagement-list div span{
+    margin: 10px;
+}
+.user-info-accountManagement-list div a{
+    float: right;
+    position: relative;
+    top: -10px;
+}
+
+.user-info-title {
+    margin: 0 50px;
+    height: 30px;
+}
+.user-info-title span{
+    position: relative;
+    top: 10px;
+    font-size: 16px;
+    color: red;
+}
+.user-info-changePassword-content{
+    margin: auto;
+    position: relative;
+    top: 60px;
+    max-width: 500px;
+}
+
+.small-gray {
+    font-size: 12px;color: #bdb7b7;
+}
+
+.user-info-box a span{
+    top: -2px;
+    position: relative;
+    left: 5px;
+}
+
+.user-info-box a:hover{
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.user-info-box div{
+    padding-top: 50px;
+}
+.layui-card-header-right{
+    float: right;
+}
+.layui-card:hover{
+    border-radius: 12px;
+    background-color: #fefdf5;
+}
+.layui-card span{
+    display: inline-block;
+}
+.layui-card i{
+    display: inline-block;
+}
+layui-icon layui-icon-rmb:hover{
+    animation: moveLeft 0.5s ease;
+}
+
+.layui-card:hover span{
+    animation: moveRight 0.5s ease;
+}
+
+.layui-card:hover i{
+    animation: moveLeft 0.5s ease;
+}
+
+@keyframes moveRight {
+    0%{
+        transform: translateX(50%);
+        color: #1f52f8;
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeft {
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    100%{
+         transform: translateX(0%);
+         opacity: 1;
+     }
+}
+
+.layui-card{
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.7s;
+    box-shadow: 3px 3px 10px 1px rgba(0,0,0,.05);
+}
+
+.content-center{
+    text-align: center;
+    padding-top: 20%;
+    font-size: 20px;
+}

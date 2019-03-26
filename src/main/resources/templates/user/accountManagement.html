@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改密码</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{/layui/css/layui.css}" media="all" rel="stylesheet">
+    <link th:href="@{/ui/css/newIndex.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/ui/css/select.css}">
+    <link  th:href="@{/plugins/Waves/waves.min.css}" rel="stylesheet">
+    <link rel="icon" th:href="@{/ui/images/favicon.ico}">
+
+
+    <style>
+
+        .user-intro > div{
+            margin: 20px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body >
+<!--导航栏-->
+
+<div th:include="common/newtop :: common" ></div>
+
+<div style="padding-top: 60px;background: #f7f1f1;">
+    <div class="layui-container" style="padding-top: 60px;">
+        <div class="layui-row layui-col-space15" >
+                <div class="layui-col-lg9 layui-col-md9 layui-col-sm9 layui-col-xs9" >
+                    <div class="layui-card" style="background: white;border-radius: 5px;">
+                        <div class="user-info-content" >
+                            <div class="user-info-title" style="font-size: 16px;padding: 20px 20px 0px 20px;">
+                                <a href="javascript:void(0);" style="padding-right: 40px;color:red;"><strong>账号管理</strong></a>
+                            </div>
+                            <hr>
+                            <div id="userInfo">
+                                <div class="user-info-accountManagement" style="padding: 20px;">
+                                    <div class="user-info-accountManagement-list">
+                                        <div style="line-height: 40px;">
+                                            <div style="display: inline-block;float: left;">
+                                                <span>手机</span>
+                                                <span th:text="${userEntity.phone}"></span>
+
+                                            </div>
+                                            <div style="display: inline-block;float: right;">
+                                                <a class="layui-btn layui-btn-normal button" onclick="updateTel()">更换</a>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!--<div style="line-height: 40px;">
+                                            <div style="display: inline-block;float: left;">
+                                                <span>微信</span>
+                                                <span>未绑定</span>
+                                            </div>
+                                            <div style="display: inline-block;float: right;">
+                                                <a class="layui-btn layui-btn-danger button">绑定</a>
+                                            </div>
+
+                                        </div>
+
+                                        <hr>-->
+                                        <div style="line-height: 40px;" th:if="${userEntity.email} != null">
+                                            <div style="display: inline-block;float: left;">
+                                                <span>邮箱</span>
+                                                <span th:text="${userEntity.email}"></span>
+                                            </div>
+                                            <div style="display: inline-block;float: right;">
+                                                <a class="layui-btn layui-btn-normal layui-btn-disabled button">更换</a>
+                                            </div>
+                                        </div>
+
+                                        <div style="line-height: 40px;" th:if="${userEntity.email} == null">
+                                            <div style="display: inline-block;float: left;">
+                                                <span>邮箱</span>
+                                                <span >未绑定</span>
+                                            </div>
+                                            <div style="display: inline-block;float: right;">
+                                                <a class="layui-btn layui-btn-danger">绑定</a>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-lg3 layui-col-md3 layui-col-sm3 layui-col-xs3 " style="height: 600px;">
+                    <div class="layui-card" style="background: white;border-radius: 5px;">
+                        <div class="right-select" style="padding: 30px;">
+                            <div class="user-intro">
+                                <div class="user-pic"><img th:src="@{/ui/images/favicon.ico}"     width="90"/></div>
+                                <div class="user-name"><span th:text="${userEntity.userName}"></span></div>
+                                <!--<div class="user-lv">普通会员</div>-->
+                                <div class="user-addVip">
+                                    <div><a href="/VIP/index" class="layui-btn layui-btn-normal layui-bg-blue button" style="width: 100%">加入阿拉山会员</a></div>
+                                </div>
+                                <div class="user-addVip">
+                                    <div th:if="${userEntity.companyStatus} == 0 ">
+                                        <a class="layui-btn layui-btn-danger  button" style="width: 100%" href="/user/info?type=1">申请企业认证</a>
+                                    </div>
+                                    <div th:if="${userEntity.companyStatus} eq 3 ">
+                                        <a class="layui-btn layui-btn-danger  button" style="width: 100%" href="/user/info?type=1">认证审核中</a>
+                                    </div>
+                                    <!--等于1表示已认证-->
+                                    <div  th:if="${userEntity.companyStatus} eq 1 ">
+                                        <a class="layui-btn layui-btn-normal button" style="width: 100%" href="/user/info?type=1">查看认证信息</a>
+                                    </div>
+                                    <div  th:if="${userEntity.companyStatus} eq 2 ">
+                                        <a class="layui-btn layui-btn-normal button" style="width: 100%" href="/user/info?type=1">查看认证结果</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-collapse" >
+                                <div class="layui-colla-item">
+                                    <h2 class="layui-colla-title">我的账户</h2>
+                                    <div class="layui-colla-content layui-show" >
+                                        <div><a class="button" href="/user/info" >个人资料</a></div>
+                                        <div><a class="button" href="/user/accountManagement">账号管理</a></div>
+                                        <div><a class="button" href="/user/changePassword">修改密码</a></div>
+                                        <div><a class="button" href="/awx/createAccount">结算账户认证</a></div>
+                                        <div><a class="button" href="/solutionService/info">全球开店</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div id="updateTelLab" style="display: none;min-width: 200px;max-width: 70%;margin: 0 auto;padding-top: 20px;">
+
+        <form class="layui-form" action="">
+
+            <div class="layui-form-item">
+                <span>已绑定手机：<span th:text="${userEntity.phone}"></span></span>
+                <input type="hidden" id="phone" name="phone" lay-verify="phone" th:value="${userEntity.phone}">
+            </div>
+            <div class="layui-form-item">
+                <span class="small-gray">若该手机号已无法使用请联系客服</span>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">新手机号码</label>
+                <div class="layui-input-block">
+                    <input type="text" id="newPhone" name="newPhone" lay-verify="newPhone"  autocomplete="off" placeholder="新手机号码" class="layui-input" >
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">登录密码</label>
+                <div class="layui-input-block">
+                    <input type="password" id="password" name="password" lay-verify="required"  autocomplete="off" placeholder="登录密码" class="layui-input" >
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">短信验证码</label>
+                <div class="layui-input-block">
+                    <input type="text" id="VerificationCode" name="VerificationCode" lay-verify="VerificationCode|number"   autocomplete="off" placeholder="短信验证码" class="layui-input" style="width: 60%;float: left;">
+                    <button  class="layui-btn layui-btn-normal button" id="sendVerificationCode" style="width: 35%;float: right;">发送验证码</button>
+                </div>
+            </div>
+            <div class="layui-form-item" style="text-align: center;">
+                <button  class="layui-btn layui-btn-warm button"  lay-submit="" lay-filter="submit"  style="width: 30%;float: right;">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div th:include="common/newfooter :: common" ></div>
+
+<script th:src="@{/ui/js/jquery_3_3_1_min.js}"></script>
+<script th:src="@{/layui/layui.js}"></script>
+<script th:src="@{/ui/js/select.js}"></script>
+<script th:src="@{/ui/js/app.js}"></script>
+<script th:src="@{/plugins/Waves/waves.min.js}"></script>
+
+<script type="text/javascript">
+
+    Waves.init();
+    Waves.attach('.button', ['button']);
+
+    layui.use(['form', 'layer', 'laydate','element'], function() {
+        var form = layui.form
+            , layer = layui.layer
+            , element = layui.element
+            , laydate = layui.laydate;
+
+
+        //自定义验证规则
+        form.verify({
+            newPhone:function (value) {
+                var phone = $("#phone").val();
+
+                //企业信用代码
+                if(value==phone){
+                    return "手机号码不能重复，请输入需要更换的手机号码!";
+                }
+            },
+            VerificationCode:function (value) {
+                if(value.length!=6){
+                    return "请输入6位的验证码!";
+                }
+            }
+        });
+
+        //监听提交
+        form.on('submit(submit)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+
+
+            /*$.ajax({
+                "url" : '/user/changePhone',
+                "type" : 'POST',
+                "dataType" : 'json',
+                data : {
+                    phone : phone,
+                    password : password,
+                    VerificationCode : VerificationCode,
+                    newPhone : newPhone
+                },
+                success: function(data){
+                    if(data.status==1){
+                        layer.msg("更换成功", {
+                            icon: 1,
+                            time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                        });
+                    }else{
+                        layer.msg(data.msg, {
+                            icon: 2,
+                            time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                        });
+                    }
+                }
+            })*/
+
+
+            commit(data.field,'/user/changePhone','/login')
+
+            return false;
+        });
+
+    })
+
+
+    function updateTel() {
+
+        var title = "更换手机";
+
+        var id = "updateTelLab";
+
+        layer.open({
+            title:title,
+            type: 1,
+            area: ['40%', '400px'],
+            /*scrollbar: false,*/
+            content: $("#"+id) //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+        });
+    }
+
+    //发送验证码
+    function sendVerificationCode(){
+        //var phone = $("#phone").val();
+        var phone = "18520107940";
+        if(phone!="" && phone.length == 11){
+            $.ajax({
+                "url" : '/send/sendPhoneMessage',
+                "type" : 'Get',
+                "dataType" : 'json',
+                data : {
+                    phone : phone,
+                    TemplateCode : 2
+                },
+                success: function(data){
+                    if(data.status==1){
+                        layer.msg("验证码发送成功,请注意查看手机！(五分钟内有效)", {
+                            icon: 1,
+                            time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                        });
+                    }else{
+                        layer.msg("发送失败,请稍后重试！", {
+                            icon: 1,
+                            time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                        });
+                    }
+                }
+            })
+        }else{
+            layer.msg("请输入正确的手机号码", {
+                icon: 1,
+                time: 2000 //2秒关闭（如果不配置，默认是3秒）
+            });
+        }
+
+    }
+
+
+    var wait=60;
+    function time(o) {
+        if (wait == 0) {
+            o.setAttribute("class","layui-btn");
+            o.removeAttribute("disabled");
+            o.innerText ="免费获取验证码";
+            wait = 60;
+        } else {
+            o.setAttribute("class", "layui-btn layui-btn-disabled");
+            o.setAttribute("disabled", true);
+            o.innerText="重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                    time(o)
+                },
+                1000)
+        }
+    }
+    document.getElementById("sendVerificationCode").onclick=function(){
+        var phone = $("#phone").val();
+        if($.trim(phone) == ""){
+            layer.msg("请绑定手机号码！", {
+                icon: 2,
+                time: 2000 //2秒关闭（如果不配置，默认是3秒）
+            });
+            return false;
+        }
+        sendVerificationCode();
+        time(this);}
+
+
+
+
+
+
+
+</script>

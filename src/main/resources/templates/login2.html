@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/ui/css/font_491364_i0c0je4kvc.css}">-->
+    <link rel="stylesheet" th:href="@{/ui/css/common.css}">
+    <link rel="stylesheet" th:href="@{/ui/css/login&amp;register.css}">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+    <link  th:href="@{/plugins/Waves/waves.min.css}" rel="stylesheet">
+    <script th:src="@{/ui/js/jquery_3_3_1_min.js}"></script>
+    <script th:src="@{/ui/js/common.js}"></script>
+    <script th:src="@{/layui/layui.js}"></script>
+    <script th:src="@{/ui/js/app.js}"></script>
+    <script th:src="@{/ui/js/login&amp;register.js}"></script>
+    <link rel="icon" th:href="@{/ui/images/favicon.ico}">
+
+
+</head>
+<body class="body">
+    <!--header开始-->
+    <!-- 顶部通用 -->
+    <div th:include="common/top :: common"></div>
+    <!--<div th:include="common/newtop :: common" ></div>-->
+    <!--header结束-->
+    
+
+<div class="login-container">
+    <div class="login-bg"></div>
+        <div class="login-index-wrap">
+            <div class="login-form" >
+                <div  autocomplete="off" class="form clear" >                <legend class="legend">用户登录</legend>
+                <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span><span class="field-validation-valid text-danger" data-valmsg-for="EmailOrTelNo" data-valmsg-replace="true"></span>                <div class="from-group">
+
+                    <input class="form-control" data-val="true" data-val-required="邮箱/手机不能为空" id="username" name="username" placeholder="邮箱/手机号" type="text" value="" />
+
+                    </div>
+                    <div class="from-group">
+                        <input class="form-control" data-val="true" data-val-required="密码不能为空" id="password" name="password" placeholder="密码" type="password" />
+                    </div>
+                    <div class="error1"><i class="iconfont icon-error"></i>账号或密码错误</div>
+                    <button id="login" class="btn-submit button" >登陆</button>
+                    <a href="/retrievePassword" class="forget button">忘记密码？</a>
+                    <a href="/register" class="register-s button">新用户注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="login_container" style="display:none;text-align:center;"></div>
+
+<!--footer开始-->
+<!-- 底部通用-->
+<div th:include="common/footer :: common"></div>
+
+<script th:src="@{/plugins/Waves/waves.min.js}"></script>
+
+<script type="text/javascript">
+    // This is ok.
+    Waves.init();
+    Waves.attach('.button', ['button']);
+</script>
+<script type="text/javascript">
+
+    document.getElementById("login").onclick = function(){
+
+        var username = $("#username").val();
+        var password = $("#password").val();
+
+        login(username,password,"a");
+    }
+
+    /*var msg = [[${msg}]];
+    console.log(msg);
+    $(document).ready(function() {
+        //错误提示信息
+        if (msg!= null) {
+            alert(msg);
+        }
+        //alert(msg);
+    });*/
+
+</script>
+
+</body>
+</html>
+

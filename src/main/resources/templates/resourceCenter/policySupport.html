@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>政策支持</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{/layui/css/layui.css}" media="all" rel="stylesheet">
+    <link th:href="@{/ui/css/newIndex.css}" rel="stylesheet">
+    <link rel="icon" th:href="@{/ui/images/favicon.ico}">
+
+</head>
+<body >
+    <!--导航栏-->
+
+    <div th:include="common/newtop :: common" ></div>
+
+    <!--介绍图-->
+    <div class="layui-row layui-btn-fluid brand-img">
+        <div class="brand-img wrapper">
+            <div class="wrapper-content">
+                <h1 >改变小企业融资的游戏</h1>
+                <h2 >更多的政策业务支持</h2>
+                <a class="layui-btn layui-btn-big layui-bg-darkblue" href="/placeOrder/info" >现在申请</a>
+            </div>
+        </div>
+        <div>
+            <img th:src="@{/ui/images/Header_Carpenter.jpg}">
+        </div>
+    </div>
+    <!--内容分栏-->
+    <div class="container">
+        <div class="layui-row layui-btn-fluid layui-bg-white" ><!--layui-bg-white-->
+            <div class="layui-container ps">
+                <div class="layui-col-md9">
+                    <ul class="content-ul">
+                        <li>
+                            <strong>阿拉山于2019年推出设备融资</strong>
+                            <p>2019年1月24</p>
+                            <p> 阿斯蒂芬阿斯顿发多少阿斯顿发送到发送到</p>
+                        </li>
+                        <li>
+                            <strong>阿拉山于2019年推出设备融资</strong>
+                            <p>2019年1月24</p>
+                            <p> 阿斯蒂芬阿斯顿发多少阿斯顿发送到发送到</p>
+                        </li>
+                        <li>
+                            <strong>阿拉山于2019年推出设备融资</strong>
+                            <p>2019年1月24</p>
+                            <p> 阿斯蒂芬阿斯顿发多少阿斯顿发送到发送到</p>
+                        </li>
+                        <li>
+                            <strong>阿拉山于2019年推出设备融资</strong>
+                            <p>2019年1月24</p>
+                            <p> 阿斯蒂芬阿斯顿发多少阿斯顿发送到发送到</p>
+                        </li>
+                        <li>
+                            <strong>阿拉山于2019年推出设备融资</strong>
+                            <p>2019年1月24</p>
+                            <p> 阿斯蒂芬阿斯顿发多少阿斯顿发送到发送到</p>
+                        </li>
+                    </ul>
+                    <div id="demo2-2" style="    margin-left: 60px;"></div>
+                </div>
+                <div class="layui-col-md3" style="text-align: center;">
+                    <img th:src="@{/ui/images/news1.png}" style="width: 250px;margin: 10px;"><br>
+                    <img th:src="@{/ui/images/news2.png}" style="width: 250px;margin: 10px;"><!--<br>
+                    <img th:src="@{/ui/images/news3.jpg}" style="width: 300px;">-->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div th:include="common/newfooter :: common" ></div>
+
+</body>
+
+<script th:src="@{/ui/js/jquery_3_3_1_min.js}"></script>
+<script th:src="@{/layui/layui.js}"></script>
+<script th:src="@{/ui/js/common.js}"></script>
+
+<script>
+    layui.use(['laypage', 'layer','element'], function(){
+        var laypage = layui.laypage
+            ,layer = layui.layer
+            ,element = layui.element;
+
+
+        laypage.render({
+            elem: 'demo2-2'
+            ,count: 100
+            ,limit: 5
+            ,theme: '#2b36ff'
+            ,jump: function(obj, first){
+                //obj包含了当前分页的所有参数，比如：
+                //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                //console.log(obj.limit); //得到每页显示的条数
+
+                //首次不执行,加载页面的时候不执行，点击的时候就执行
+                if(!first){
+                    //alert("哈哈")
+                }
+            }
+        });
+
+        //…
+    });
+</script>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流量矩阵</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{/layui/css/layui.css}" media="all" rel="stylesheet">
+    <link th:href="@{/ui/css/newIndex.css}" rel="stylesheet">
+    <link rel="icon" th:href="@{/ui/images/favicon.ico}">
+
+</head>
+<body >
+    <!--导航栏-->
+
+    <div th:include="common/newtop :: common" ></div>
+
+    <!--介绍图-->
+    <div class="layui-row layui-btn-fluid brand-img">
+        <div class="brand-img wrapper">
+            <div class="wrapper-content">
+                <h1 >流量矩阵</h1>
+                <h2 >全渠道、大数据锁定精准用户，量身定制推广解决方案</h2>
+                <a class="layui-btn layui-btn-big layui-bg-darkblue" href="/placeOrder/info" >现在申请</a>
+            </div>
+        </div>
+        <div>
+            <img th:src="@{/ui/images/Header_Carpenter.jpg}">
+        </div>
+    </div>
+    <!--内容分栏-->
+    <div class="container">
+        <div class="layui-row">
+            <div class="layui-col-md4">
+                <div class="icon-lable">
+                    <div class="layui-inline">
+                        <i class="layui-icon layui-icon-star" ></i>
+                    </div>
+                    <div class="layui-inline">
+                        <strong >权威保障</strong><br><br>
+                        <p >数据明细化，投放效果可查</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <div class="icon-lable">
+                    <div class="layui-inline">
+                        <i class="layui-icon layui-icon-dollar" ></i>
+                    </div>
+                    <div class="layui-inline">
+                        <strong >智能投放</strong><br><br>
+                        <p >行业竞品投放数据分析，掌握动态</p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <div class="icon-lable">
+                    <div class="layui-inline">
+                        <i class="layui-icon layui-icon-praise" ></i>
+                    </div>
+                    <div class="layui-inline">
+                        <strong >高性价比</strong><br><br>
+                        <p >与主流媒体长期合作，流量扶持</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-row layui-btn-fluid layui-bg-gray" ><!--layui-bg-white-->
+            <div class="content-center font-size-17" style="color: #000000;">
+                <div class="line-height-100" >
+                    <div>
+                        <h2 class="font-bold">了解流量矩阵</h2>
+                    </div>
+
+                </div>
+                <div>
+                    <strong>流量矩阵可以帮助到你什么？</strong>
+                </div>
+                <div class="layui-container" style="padding-bottom: 50px;">
+                    <div class="info">
+                        <p class="padding-bottom-30">
+                           通过整合全行业，签约一首战略合作资源，制定专属投放策略，整合营销助力提升品牌口碑，为客户提供专业数据支持，降低广告投放成本
+                        </p>
+                        <!--<p  class="padding-bottom-30">
+                            指银行向客户（核心企业）提供融资和其他结算、理财服务，同时向这些客户的供应商提供贷款及时收达的便利，或者向其分销商提供预付款代付及存货融资服务。（简单地说，就是银行将核心企业和上下游企业联系在一起提供灵活运用的金融产品和服务的一种融资模式。）
+                        </p>
+                        <p  class="padding-bottom-30">
+                            以上定义与传统的保理业务及货押业务 （动产及货权抵/质押授信）非常接近。但有明显区别，即保理和货押只是简单的贸易融资产品，而供应链金融是核心企业与银行间达成的，一种面向供应链所有成员企业的系统性融资安排。
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-row layui-btn-fluid layui-bg-gray" ><!--layui-bg-white-->
+                <div class="content-center font-size-20" style="color: #000000;">
+                    <div class="line-height-100" >
+                        <div><h2>多渠道推广</h2></div>
+                    </div>
+                    <div class="layui-container" style="padding-bottom: 50px;">
+                        <div>
+                            <div class="layui-col-md6">
+                                <div class="layui-bg-darkblue padding-20">
+                                    <strong>小红书新媒体推广</strong>
+                                </div>
+                                <div class="content-ul layui-bg-white padding-20">
+                                    <ul>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-rmb"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>高质量的带货达人</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-engine"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>瞬间刷爆的优质内容</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>技术钻研深挖小红书推广策略</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>精准目标用户的千万曝光量</strong>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <h5 >你可以：</h5>
+                                    <ul>
+                                        <li  style="height: 100px;">利用网红执照品牌势能品牌高度，以此作为品牌背书和获取消费者的信任感，大量投放小红书上的中小kol制造热度，形成跟风效应，在小红书发酵成为网红产品。利用微商代理，网络炒作、在朋友圈、新闻媒体、社交平台上曝光产品内容。将热度扩散到整个网络。</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="layui-col-md6">
+                                <div class="layui-bg-blue padding-20">
+                                    <strong>微信营销推广</strong>
+                                </div>
+                                <div class="content-ul layui-bg-white padding-20">
+                                    <ul>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-engine"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>海量资源</strong>
+                                            </div>
+                                        </li>
+                                        <li >
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>专业团队</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>精准投放</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>推广经验</strong>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <h5>你可以：</h5>
+                                    <ul class="list">
+                                        <li  style="height: 100px;">通过高流量的微信公众号，进行筛选投放，有针对性的选择更符合品牌的受众，以创新刷墙大字报的形式，展现品牌想要推广的内容，文案编辑紧扣用户需求，多向尝试，炒作招势等方式，扩散到全网络。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+        </div>
+        <div class="layui-row layui-btn-fluid layui-bg-gray" ><!--layui-bg-white-->
+                <div class="content-center font-size-20" style="color: #000000;">
+                    <div class="line-height-100" >
+                        <div><h2></h2></div>
+                    </div>
+                    <div class="layui-container" style="padding-bottom: 50px;">
+                        <div>
+                            <div class="layui-col-md6">
+                                <div class="layui-bg-darkblue padding-20">
+                                    <strong>微博营销</strong>
+                                </div>
+                                <div class="content-ul layui-bg-white padding-20">
+                                    <ul>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-rmb"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>视频化</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-engine"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>垂直化</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>mcn</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>精准化</strong>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <h5 >你可以：</h5>
+                                    <ul>
+                                        <li  style="height: 100px;">微博一直都是数字营销、社会化营销，创新营销的平台渠道，根据丰富营销资源、庞大的用户基数和创新技术，为品牌进行新营销提供充分的空间，通过设定与品牌用户匹配的类别标签，选取类型相符的KOL大号进行传播，直达精准受众，并加强用户间传播，辅以优惠券形式，利益诱导，强化刺激用户转化。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="layui-col-md6">
+                                <div class="layui-bg-blue padding-20">
+                                    <strong>抖音推广</strong>
+                                </div>
+                                <div class="content-ul layui-bg-white padding-20">
+                                    <ul>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-engine"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>软性植入</strong>
+                                            </div>
+                                        </li>
+                                        <li >
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>灵活性高</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>互动性高</strong>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><strong><i class="layui-icon layui-icon-console"></i></strong></div>
+                                            <div class="padding-left-30">
+                                                <strong>多元化广</strong>
+                                            </div>
+                                        </li>
+                                    <h5>你可以：</h5>
+                                    <ul class="list">
+                                        <li style="height: 100px;">抖音筛选热门视频平台，选取青春活力高人气的KOL达人，结合平台热点，定制“魔性摇摇舞”，引发粉丝跟风效仿，完成裂变传播</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+        </div>
+
+        <!--合作伙伴-->
+        <!--<div class="layui-row layui-btn-fluid layui-bg-white padding-bottom-50" >&lt;!&ndash;layui-bg-white&ndash;&gt;
+            <div class="layui-container tm">
+                <div class="content-center font-size-17" style="color: #000000;">
+
+
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                    <div class="layui-col-md2 layui-col-sm4">
+                        <div class="margin-40">
+                            <strong class="font-size-30">合作伙伴</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="layui-row layui-bg-white" style="color: #061a80;">
+            <div class="layui-col-md12">
+                <div class="icon-lable" style="padding: 40px;">
+                    <div class="layui-inline">
+                        <strong class="font-size-30">一键开启您的多元化推广渠道</strong>
+                        <div style="margin-top: 10px;">
+
+                            <a class="layui-btn layui-btn-big layui-bg-blue" href="/placeOrder/info">现在申请</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-row layui-btn-fluid layui-bg-white" ><!--layui-bg-white-->
+            <div class="content-center font-size-17 height-500" style="color: #000000;">
+               <!-- <div class="layui-col-md6">
+                    <div class="margin-40">
+                        <strong class="font-size-30">人物介绍</strong>
+                    </div>
+                </div>-->
+                <div class="layui-col-md12">
+                    <div class="margin-40">
+                        <i class="layui-icon layui-icon-dialogue font-size-50"></i><br>
+                        <strong class="font-size-30">高度熟练的顾问，致力于为您服务</strong></div>
+                    <div class="margin-40"><p>帮助个人形成符合自身条件的职业观点和职业前程，同时用自己的经验和专业知识为个人职业发展和职业过程中问题作出最合适的判断及指导。</p></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div th:include="common/newfooter :: common" ></div>
+
+</body>
+
+<script th:src="@{/ui/js/jquery_3_3_1_min.js}"></script>
+<script th:src="@{/layui/layui.js}"></script>
+
+<script>
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //…
+    });
+</script>
+
+</html>

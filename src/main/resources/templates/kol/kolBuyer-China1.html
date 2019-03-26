@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KOL买手-中国</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{/layui/css/layui.css}" media="all" rel="stylesheet">
+    <link th:href="@{/ui/css/newIndex.css}" rel="stylesheet">
+    <link rel="icon" th:href="@{/ui/images/favicon.ico}">
+
+</head>
+<body >
+    <!--导航栏-->
+
+    <div th:include="common/newtop :: common" ></div>
+
+    <!--介绍图-->
+    <div class="layui-row layui-btn-fluid brand-img">
+        <div class="brand-img wrapper">
+            <div class="wrapper-content">
+                <h1>卖手KOL-中国</h1>
+                <h2 >亲密接触中国的顶尖KOL，合作以此提高在中国市场的知名度</h2>
+                <!--<a class="layui-btn layui-btn-big layui-bg-darkblue" href="/placeOrder/info" >现在申请</a>-->
+            </div>
+        </div>
+        <div>
+            <img th:src="@{/ui/images/kol.jpg}">
+        </div>
+    </div>
+    <!--内容分栏-->
+    <div class="container">
+
+        <div class="layui-row">
+            <div class="layui-col-md4">
+                <div class="icon-lable">
+                    <div class="layui-inline">
+                        <i class="layui-icon layui-icon-star" ></i>
+                    </div>
+                    <div class="layui-inline">
+                        <strong >资源多</strong><br><br>
+                        <p >集合了众多不同类型的知名网红。</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <div class="icon-lable">
+                    <div class="layui-inline">
+                        <i class="layui-icon layui-icon-dollar" ></i>
+                    </div>
+                    <div class="layui-inline">
+                        <strong >渠道广</strong><br><br>
+                        <p >根据不同渠道做资源精准投放。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <div class="icon-lable">
+                    <div class="layui-inline">
+                        <i class="layui-icon layui-icon-praise" ></i>
+                    </div>
+                    <div class="layui-inline">
+                        <strong >经验足</strong><br><br>
+                        <p >拥有经验丰富的互联网推广策略。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-row layui-btn-fluid layui-bg-gray" ><!--layui-bg-white-->
+            <div class="content-center font-size-17" style="color: #000000;">
+                <div class="line-height-100" >
+                    <div>
+                        <h2 class="font-bold">我们提供全方位KOL推广服务</h2>
+                    </div>
+
+                </div>
+                <!-- <div>
+                     <span>供应链金融可以帮助到你什么？</span>
+                 </div>-->
+                <div class="layui-container" style="padding-bottom: 50px;">
+                    <div class="info">
+                        <p class="padding-bottom-30">
+                            我们为您提供经验丰富的品牌推广计划，筛选出最合适的KOL供品牌选择，帮助品牌连接上亿的中国消费者，成功完成每一次的KOL营销，从市场战略到KOL选择、沟通，我们确保品牌达到月目标，定价简单、透明。
+                        </p>
+                        <!--<p  class="padding-bottom-30">
+                            指银行向客户（核心企业）提供融资和其他结算、理财服务，同时向这些客户的供应商提供贷款及时收达的便利，或者向其分销商提供预付款代付及存货融资服务。（简单地说，就是银行将核心企业和上下游企业联系在一起提供灵活运用的金融产品和服务的一种融资模式。）
+                        </p>
+                        <p  class="padding-bottom-30">
+                            以上定义与传统的保理业务及货押业务 （动产及货权抵/质押授信）非常接近。但有明显区别，即保理和货押只是简单的贸易融资产品，而供应链金融是核心企业与银行间达成的，一种面向供应链所有成员企业的系统性融资安排。
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-container">
+
+            <div style="padding: 0 0 50px 0;">
+                <div class="layui-row">
+                    <div style="margin: 40px; text-align: center;font-size: 30px;">
+                        <strong>KOL列表</strong>
+                    </div>
+                </div>
+                <div class="layui-row" style="line-height: 40px;height: 40px;font-size: 12px;text-align: center;color: #7d7373;background-color: #eaeaea;border: 1px solid #d7d1d1;">
+                    <div class="layui-col-md1">选择</div>
+                    <div class="layui-col-md3" style="text-align: left;">媒体名称</div>
+                    <div class="layui-col-md2">价格(元/小时)</div>
+                    <div class="layui-col-md1">分类/地区</div>
+                    <div class="layui-col-md1">平台</div>
+                    <div class="layui-col-md1">粉丝数</div>
+                    <div class="layui-col-md1">观众量</div>
+                    <div class="layui-col-md1">备注</div>
+                    <div class="layui-col-md1">操作</div>
+                </div>
+                <div class="kol-table-body">
+                    <div id="1page">
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;">
+                                <a href="/kol/China/kolInfo">
+                                    <i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i>
+                                </a>
+
+                            </div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">Juuu</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：111256762</a></li>
+                                        <li><a style="color: #bdbdbd;">无功能描述</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥5687</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥8833</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            上海.黄浦区
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">抖音</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">11万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span >1万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >8524</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">八百标*奔北坡 一言不合就飙歌 停播🙄️才怪</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg1.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">莉娜丫头</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：70957558</a></li>
+                                        <li><a style="color: #bdbdbd;">微博时尚达人 乐蜂网 内容运营部 美容编辑 微博签约自媒体</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥3751</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥7502</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            全国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">映客</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">22万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >1万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >1万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg2.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">九儿大魔王🌚🌝</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：28022551</a></li>
+                                        <li><a style="color: #bdbdbd;">模特</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">-</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥23232</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            全国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">花椒</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">5万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >7098</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >970</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg3.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">潘奕</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：23110187</a></li>
+                                        <li><a style="color: #bdbdbd;">直播达人</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥46585</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥77561</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            全国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">159.34万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >354.1万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >153.5万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg4.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">Miss米啦</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：1001391</a></li>
+                                        <li><a style="color: #bdbdbd;">时尚达人</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥13189</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥15488</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            上海.黄浦区
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">映客</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">40万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >2万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >1万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                    </div>
+                    <div id="2page" style="display: none;">
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg6.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">i黄珍妮</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：26614130</a></li>
+                                        <li><a style="color: #bdbdbd;">wb:i黄珍妮 淘宝店铺号：9236330</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥2904</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥4719</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            上海
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">17.85万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >102.3万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >46.09万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">wb:i黄珍妮 淘宝店铺号：9236330</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg7.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">商侃Kiwi</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：26831639</a></li>
+                                        <li><a style="color: #bdbdbd;">和力辰光国际文化传媒（北京）有限公司 艺人</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥137940</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥206910</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            北京
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">140.88万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >1305.8万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >164.58万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg8.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">白蛇酱酱</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：1864423</a></li>
+                                        <li><a style="color: #bdbdbd;">2016年一直播直播红人</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥13552</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥21054</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            上海
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">29.2万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >1273万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >23.1万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">晚上00:00直播❤️</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg9.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">潘雨润PanYR_</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：1578520</a></li>
+                                        <li><a style="color: #bdbdbd;">GIRLMEANING品牌创始人 达人说签约红人 微博签约自媒体</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥139150</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥139150</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            北京
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">381.74万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >420万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >155.45万<span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg10.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">迷失的豆包Baby</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：23195734</a></li>
+                                        <li><a style="color: #bdbdbd;">一个在金融圈搞IT的小艺人</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">-</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥14036</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            时尚
+                                        </li>
+                                        <li>
+                                            全国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">花椒</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">131.2万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >44.7万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >23万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                    </div>
+                    <div id="3page" style="display: none;">
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg11.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">张雨晗💗</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：34281728</a></li>
+                                        <li><a style="color: #bdbdbd;">模特 艺人 微博：张雨晗zyh 商业合作请私信</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥3751</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥6655</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            全国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">439.13万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >2153.5万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >1333.91万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">美妆博主 时尚娱乐 KOL 商业合作请私信</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg12.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">曾莹🐰Bubu</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：132736</a></li>
+                                        <li><a style="color: #bdbdbd;">时尚美妆达人</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥23111</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥26378</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            全国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">映客</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">5万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >8473</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >8244</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg13.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">杨洁Joan</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：287320</a></li>
+                                        <li><a style="color: #bdbdbd;">久尚首席模特，《米娜》及日本《CanCam》专属模特</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥102124</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥158631</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            北京
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">131.08万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >117.4万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >35.78万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg14.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">zyzy梦梦</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：6321100</a></li>
+                                        <li><a style="color: #bdbdbd;">公主号：blogger手账 同名微博</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥7502</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥10527</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            上海
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">177.84万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >379.3万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >228.67万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">同名微博 公众：zyzymeng</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg15.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">陈子涵^_^</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：39197198</a></li>
+                                        <li><a style="color: #bdbdbd;">合作请私信微博：cherry桃宝宝</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥6655</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥10648</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            上海
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">211.95万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >5192.9万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  > 958.73万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                    </div>
+                    <div id="4page" style="display: none;">
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg16.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">张家衣</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：24889062</a></li>
+                                        <li><a style="color: #bdbdbd;">q</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥77561</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥93049</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            美国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">239.08万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >410.4万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >116.39万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg17.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">桃娘娘儿</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：76261907</a></li>
+                                        <li><a style="color: #bdbdbd;">无妨爱我淡薄 但求爱我长久</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥3751</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥8833</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            北京.朝阳区
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">103.65万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >253.8万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >147.01万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">TaooYii</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg18.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">✨唯一✨</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：155835327</a></li>
+                                        <li><a style="color: #bdbdbd;">映客直播平台主播</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥3751</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥5687</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            全国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">映客</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">20万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >3万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >8799</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">富埒陶白，肥马轻裘。</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg19.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">兔麻麻🐰张睿暄</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：35303490</a></li>
+                                        <li><a style="color: #bdbdbd;">花椒直播达人、模特</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">-</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥7502</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">花椒</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">6万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >3万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >4053</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg20.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">暮然_回首 </a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：44960218</a></li>
+                                        <li><a style="color: #bdbdbd;">2016年一直播年度女神季军 2016参与深圳卫视《卧谈会有趣》节目录制 “完美世界2游戏嘉年华”线下推广</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥8470</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥14036</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            天津
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">103.8万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >340万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >24.1万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">来是偶然的，走是必然的，Hi！很高兴遇见你💕</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                    </div>
+                    <div id="5page" style="display: none;">
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg21.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">Rorobarbie </a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：647442</a></li>
+                                        <li><a style="color: #bdbdbd;">一枚会搞笑段子的主播</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥3751</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥6655</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            浙江.宁波
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">49.6万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >1354万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >31.7万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">没有雨伞的孩子 必须努力奔跑🏃‍🕐中午12 晚随缘</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg22.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">春楠Li</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：31148814</a></li>
+                                        <li><a style="color: #bdbdbd;">遇见独一无二的自己。</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥146773</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥146773</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            全国
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">128.07万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >437.2万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >76.17万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">遇见独一无二的自己。</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg23.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">潘蓉AimeePanPan</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：18704108</a></li>
+                                        <li><a style="color: #bdbdbd;">浙江电视台经视生活频道主持人</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">-</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥5687</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            浙江.杭州
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">2.86万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >3.9万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >1.51万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">浙江经视主持人</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg24.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">lordsesG</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：52794378</a></li>
+                                        <li><a style="color: #bdbdbd;">美女主播，口才好，直播活跃，可接各类生活，美妆，护肤，运动，美食类直播</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥7502</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥7502</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            上海
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">51.03万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >88.8万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >11.29万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;"></span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                        <div class="layui-row" style="line-height: 130px;height: 130px;font-size: 12px;">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;height: 130px;"><i class="layui-icon layui-icon-add-1" style="font-size: 30px;color: #a2a2a2;"></i></div>
+                            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 " style="height: 125px;">
+                                <div style="display: inline-block;">
+                                    <img th:src="@{/ui/images/headImg25.jpg}" class="layui-nav-img" style="width: 65px;height: 65px;">
+                                </div>
+                                <div style="display: inline-block;vertical-align: middle;width: 200px;margin-left: 10px;">
+                                    <ul style="line-height: 25px;">
+                                        <li><a style="color: #666;">要勤劳的tracy</a></li>
+                                        <li><a style="color: #9e9e9e;">直播号：30451879</a></li>
+                                        <li><a style="color: #bdbdbd;">知名美妆博主 时尚达人 新浪时尚美搭专家 OnlyStar签约达人 时尚美妆视频自媒体</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            线上直播：<span style="color: #ff622b;padding-left: 20px;">￥12705</span>
+                                        </li>
+                                        <li>
+                                            线下活动：<span style="color: #ff622b;padding-left: 20px;">￥17787</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;font-size: 12px;">
+                                        <li>
+                                            美妆
+                                        </li>
+                                        <li>
+                                            辽宁.沈阳
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">一直播</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 content-center">162.35万</div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <ul style="line-height: 25px;">
+                                        <li>
+                                            <span style="color: #ff622b;">峰值：</span><span  >329.9万</span>
+                                        </li>
+                                        <li>
+                                            <span style="color: #ff622b;">平均：</span><span  >172.65万</span>
+                                        </li>
+                                    </ul>
+                                </div></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1"><span style="line-height: 20px;display: inline-block;vertical-align: middle;">知名时尚博主，彩妆达人，微博时尚达人 新浪时尚美搭专</span></div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1" style="text-align: center;"><a class="layui-btn layui-btn-sm layui-bg-darkblue" onclick="yyinfo()" >预约</a></div>
+                        </div>
+                    </div>
+                    <div id="demo2-2" style="text-align: center"></div>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div style="background-image: url('/ui/images/koLlistImg.jpg');height: 200px;">
+                    <div style="font-size: 50px;text-align: center;padding: 65px 0;">
+                        <strong style="color: #ffffff;">流量经纪人</strong>
+                    </div>
+
+                    <!--<img th:src="@{/ui/images/koLlistImg.jpg}" style="width: 100%;">-->
+                </div>
+
+
+            </div>
+            <div class="layui-row layui-btn-fluid" style="padding-top: 30px;"><!--layui-bg-white-->
+                <div class="content-center font-size-20" style="color: #000000;">
+                    <div>
+                        <div class="layui-col-md4">
+                            <div class="layui-bg-darkblue padding-20">
+                                <strong>普通流量包</strong>
+                                <h6>10万级的单量</h6>
+                            </div>
+                            <div class="content-ul layui-bg-white padding-20" style="margin-bottom: 50px;">
+                                <ul>
+                                    <li>
+                                        <div class="left"><strong>1</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>构成人员，网红: Rorobarbie、春楠Li、潘蓉AimeePanPan ...</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>2</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>适用于:抖音、快手、微博</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>3</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>擅长销售产品领域：美妆、服饰</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>4</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>多名10万粉丝的高质量带货达人</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>5</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>技术钻研深挖渠道推广策略</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>6</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>精准目标用户的千万曝光量</strong>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="layui-col-md4">
+                            <div class="layui-bg-blue padding-20">
+                                <strong>中级流量包</strong>
+                                <h6>100万级的单量</h6>
+                            </div>
+                            <div class="content-ul layui-bg-white padding-20" style="margin-bottom: 50px;">
+                                <ul>
+                                    <li>
+                                        <div class="left"><strong>1</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>构成人员，网红: 张雨晗💗、曾莹🐰Bubu、杨洁Joan ...</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>2</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>适用于:抖音、快手、微博</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>3</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>擅长销售产品领域：美妆、服饰</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>4</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>多名10万粉丝的高质量带货达人</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>5</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>技术钻研深挖渠道推广策略</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>6</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>精准目标用户的千万曝光量</strong>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="layui-col-md4">
+                            <div class="layui-bg-darkblue padding-20">
+                                <strong>高级流量包</strong>
+                                <h6>1000万级的单量</h6>
+                            </div>
+                            <div class="content-ul layui-bg-white padding-20" style="margin-bottom: 50px;">
+                                <ul>
+                                    <li>
+                                        <div class="left"><strong>1</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>构成人员，网红: 潘奕、Miss米啦、潘雨润PanYR_ ...</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>2</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>适用于:抖音、快手、微博</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>3</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>擅长销售产品领域：美妆、服饰</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>4</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>多名10万粉丝的高质量带货达人</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>5</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>技术钻研深挖渠道推广策略</strong>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><strong>6</strong></div>
+                                        <div class="padding-left-30">
+                                            <strong>精准目标用户的千万曝光量</strong>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div th:if="${session.userSession} != null">
+        <input type="hidden" id="userName" th:value="${session.userSession.userName}" />
+    </div>
+    <div th:if="${session.userSession} == null">
+        <input type="hidden" id="userName" value="" />
+    </div>
+
+
+    <div th:include="common/newfooter :: common" ></div>
+
+</body>
+
+<script th:src="@{/ui/js/jquery_3_3_1_min.js}"></script>
+<script th:src="@{/layui/layui.js}"></script>
+
+<script>
+    layui.use(['laypage', 'layer','element'], function(){
+        var laypage = layui.laypage
+            ,layer = layui.layer
+            ,element = layui.element;
+
+
+        laypage.render({
+            elem: 'demo2-2'
+            ,count: 25
+            ,limit: 5
+            ,theme: '#2b36ff'
+            ,jump: function(obj, first){
+                //obj包含了当前分页的所有参数，比如：
+                //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                //console.log(obj.limit); //得到每页显示的条数
+
+
+
+                if(obj.curr==1){
+                    document.getElementById("1page").style.display = "block";
+                    document.getElementById("2page").style.display = "none";
+                    document.getElementById("3page").style.display = "none";
+                    document.getElementById("4page").style.display = "none";
+                    document.getElementById("5page").style.display = "none";
+                }else if(obj.curr==2){
+                    document.getElementById("1page").style.display = "none";
+                    document.getElementById("2page").style.display = "block";
+                    document.getElementById("3page").style.display = "none";
+                    document.getElementById("4page").style.display = "none";
+                    document.getElementById("5page").style.display = "none";
+                }else if(obj.curr==3){
+                    document.getElementById("1page").style.display = "none";
+                    document.getElementById("2page").style.display = "none";
+                    document.getElementById("3page").style.display = "block";
+                    document.getElementById("4page").style.display = "none";
+                    document.getElementById("5page").style.display = "none";
+                }else if(obj.curr==4){
+                    document.getElementById("1page").style.display = "none";
+                    document.getElementById("2page").style.display = "none";
+                    document.getElementById("3page").style.display = "none";
+                    document.getElementById("4page").style.display = "block";
+                    document.getElementById("5page").style.display = "none";
+                }else if(obj.curr==5){
+                    document.getElementById("1page").style.display = "none";
+                    document.getElementById("2page").style.display = "none";
+                    document.getElementById("3page").style.display = "none";
+                    document.getElementById("4page").style.display = "none";
+                    document.getElementById("5page").style.display = "block";
+                }
+
+                //首次不执行,加载页面的时候不执行，点击的时候就执行
+                if(!first){
+                    //alert("哈哈")
+                    window.location.href = "/kol/1/list?page=1&limit=1"
+                }
+            }
+        });
+
+
+
+
+        //…
+    });
+    function yyinfo(){
+
+        var userName = document.getElementById("userName").getAttribute("value");
+
+        if(userName!=""){
+            layer.msg("预约成功");
+        }else{
+            layer.confirm('请先登陆？', {
+                icon : 3,
+                title : '提示'
+            }, function(index, layero) {
+                window.location.href = "/login";
+            })
+        }
+
+
+
+        /*layer.open({
+            title: '预约网红'
+            ,content: '可以填写任意的layer代码'
+            ,area: ['50%', '50%']
+        });*/
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填写资料</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{/layui/css/layui.css}" media="all" rel="stylesheet">
+    <link th:href="@{/ui/css/newIndex.css}" rel="stylesheet">
+    <link rel="icon" th:href="@{/ui/images/favicon.ico}">
+    <script th:src="@{/ui/js/jquery_3_3_1_min.js}"></script>
+    <script th:src="@{/layui/layui.js}"></script>
+
+</head>
+<body >
+<!--导航栏-->
+
+<div th:include="common/newtop :: common" ></div>
+<!--内容分栏-->
+<div style="padding-top: 60px;">
+    <div class="layui-container layui-bg-white" style="color: black;">
+        <div style="margin: 40px;">
+            <hr>
+                <div style="margin: 20px 70px;">
+                    <strong style="font-size: 30px;">谢谢 ，资料提交成功!</strong><br>
+                </div>
+            <hr>
+
+                <div style="margin: 20px 20px;font-size: 18px;color: #767070;" th:if="${tip}==1">
+                    <strong>尊敬的阿拉山会员：您申请的贷款已初步审核通过，预计核发贷款额度为<span style="font-size: 35px;color: red;">300000-600000</span>元，实际额度以最终审核为准，我行金融顾问将于2小时内与您联系，请保持手机畅通，谢谢！</strong>
+                </div>
+
+                <div style="margin: 20px 20px;font-size: 18px;color: #767070;" th:if="${tip}!=1">
+                    <strong>尊敬的阿拉山会员：您申请的贷款已初步审核通过，预计核发贷款额度为<span style="font-size: 35px;color: red;">50000-300000</span>元，实际额度以最终审核为准，我行金融顾问将于2小时内与您联系，请保持手机畅通，谢谢！</strong>
+                </div>
+
+            <!--<hr>
+                <div style="margin: 20px 20px;">
+                    <div>
+                        <strong style="font-size: 18px;">与资深导师联系</strong>
+                    </div>
+                    <div style="padding-top: 10px;">
+                        <span style="font-size: 13px;color: #767070;">得到一个特别的导师了解企业贷款</span>
+                    </div>
+
+                </div>-->
+                <div class="layui-row">
+                    <div class="layui-col-md4">
+                        <hr>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div style="padding: 0 40px;text-align: center;font-size: 15px;color: #ab9a9a;"><span>北京时间：周一至周五8:30--17:30</span></div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <hr>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space30" style="color: #ab9a9a;padding-top: 40px;">
+                    <div class="layui-col-md4">
+                        <div class="layui-card" style="border: 1px solid #d7d1d1;">
+                            <div class="layui-card-body layuiadmin-card-list">
+                                <div class="layui-row" style="margin: 10px;font-size: 16px;">
+                                    <div class="success-icon">
+                                        <span>
+                                            <img th:src="@{/ui/images/dianhua.png}" width="30">
+
+                                        </span>
+                                    </div>
+                                    <div style="display: inline-block;vertical-align: middle;margin: 0 20px;">
+                                            <span style="line-height: 30px;">
+                                                020-85509186
+                                            </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-card" style="border: 1px solid #d7d1d1;">
+                            <div class="layui-card-body layuiadmin-card-list">
+                                <div class="layui-row" style="margin: 10px;font-size: 16px;">
+                                    <a href="mailto: yxkf@alasin.cn?subject=[portfolio][顺顺留学]">
+                                        <div class="success-icon" >
+                                            <span>
+                                                <img th:src="@{/ui/images/youxiang.png}" width="30" style="padding-top: 4px;">
+
+                                            </span>
+                                        </div>
+                                        <div style="display: inline-block;vertical-align: middle;margin: 0 20px;">
+                                                <span style="line-height: 30px;">
+                                                    yxkf@alasin.cn
+                                                </span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-card" style="border: 1px solid #d7d1d1;">
+                            <div class="layui-card-body layuiadmin-card-list">
+                                <a class="shangqiao" href="javascript:void(0);" rel="nofollow" >
+                                    <div class="layui-row" style="margin: 10px;font-size: 16px;">
+                                        <div class="success-icon" >
+                                            <span>
+                                                <img th:src="@{/ui/images/kefu.png}" width="30" >
+
+                                            </span>
+                                        </div>
+                                        <div style="display: inline-block;vertical-align: middle;margin: 0 20px;">
+                                                <span style="line-height: 30px;">
+
+                                                     在线联系我们
+                                                </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:include="common/newfooter :: common" ></div>
+
+</body>
+
+
+
+<script>
+
+    $(function(){
+        // 点击按钮时判断 百度商桥代码中的“我要咨询”按钮的元素是否存在，存在的话就执行一次点击事件
+        $(".shangqiao").click(function(event) {
+            if ($('#nb_invite_ok').length > 0) {
+                $('#nb_invite_ok').click();
+            }
+        });
+    });
+
+    layui.use(['form','element', 'laydate'], function() {
+        var form = layui.form
+            ,laydate = layui.laydate
+            ,element = layui.element;
+
+        laydate.render({
+            elem: '#date'
+        });
+
+        form.on('submit(submit)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            });
+            //commit(data.field,"/register","/login");
+            return true;
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,173 @@
+<link rel="stylesheet" th:href="@{/ui/css/select.css}">
+<div class="user-info-content">
+    <div class="user-info-title">
+        <span>个人资料</span>
+    </div>
+    <hr>
+    <div class="user-info-content-form">
+
+        <form class="layui-form" action="">
+
+            <div class="layui-form-item">
+                <div class="layui-input-block" >
+                    <div style="text-align: center;margin-bottom: 20px;">
+                        <a href="javascript:;" class="user-info-content-headimg"><img th:src="@{/ui/images/favicon.ico}" id="headImg" width="90" style="margin-bottom: 10px;"/></a><br>
+                        <!--<input class="user-info-content-edit-signature" placeholder="编辑签名">-->
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="id"  th:value="${userEntity.ID}" >
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">昵称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="userName" lay-verify="userName" th:value="${userEntity.userName}" autocomplete="off" placeholder="请输入昵称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block">
+                    <select name="gender" id="gender" >
+                        <option value="1" th:selected="${userEntity.gender == '1'}">男</option>
+                        <option value="2" th:selected="${userEntity.gender == '2'}">女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">生日</label>
+                <div class="layui-input-block">
+                    <input type="text" name="birthDay" id="birthDay" lay-verify="required" th:value="${birthDay}" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <input type="hidden" name="initProvince" id="initProvince" th:value="${userEntity.province}">
+            <input type="hidden" name="initCity" id="initCity" th:value="${userEntity.city}">
+            <input type="hidden" name="initCounties" id="initCounties" th:value="${userEntity.counties}">
+            <div id="addressDiv">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">省份</label>
+                    <div class="layui-input-block">
+                        <select  name="province"  lay-filter="province" id="province">
+                            <option ></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">城市</label>
+                    <div class="layui-input-block">
+                        <select name="city"  lay-filter="city" id="city">
+                            <option ></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">县区</label>
+                    <div class="layui-input-block">
+                        <select name="counties"  lay-filter="counties" id="area">
+                            <option ></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">地址</label>
+                <div class="layui-input-block">
+                    <input type="text" name="site" lay-verify="required" th:value="${userEntity.site}" placeholder="详细到门牌号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="text-align: center;"  >
+                    <a class="layui-btn layui-btn-normal button" style="width: 100%;" lay-submit="" lay-filter="userinfo">保存</a>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<script th:src="@{/ui/js/select.js}"></script>
+
+<script>
+
+    Waves.init();
+    Waves.attach('.button', ['button']);
+
+    layui.use(['form', 'layedit', 'laydate'], function() {
+        var form = layui.form
+            , layer = layui.layer
+            , laydate = layui.laydate;
+
+        form.render();
+
+        laydate.render({
+            elem: '#birthDay'
+        });
+
+
+        //自定义验证规则
+        form.verify({
+            userName: function(value){
+                if(value.length < 5){
+
+                }
+            }
+        });
+
+
+        //监听提交
+        form.on('submit(userinfo)', function(data){
+            /*layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })*/
+
+            commit(data.field,'/user/saveUserInfo','/user/info')
+
+            return false;
+        });
+
+        //上传头像
+        /*var uploadInst = upload.render({
+            elem: '#headImg'
+            ,url: '/upload/'
+            ,auto: false
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    alert(result)
+                    $('#head').setAttribute('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                //如果上传失败
+                if(res.code > 0){
+                    return layer.msg('上传失败');
+                }
+                //上传成功
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });*/
+
+
+    })
+
+
+
+
+
+
+</script>
